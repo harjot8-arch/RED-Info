@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red Square Infosys - Empowering Enterprises with Bespoke SaaS & IT Excellence</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <style>
+        /* CSS Variables - Luxurious Premium Color Palette (White, Purple, Orange Dominant) */
+        :root {
+            --primary-orange: #ff6b00; /* Vibrant Orange for key accents */
+            --secondary-purple: #a259ff; /* Deep Purple for depth and contrast */
+            --accent-white: #ffffff; /* Pure White for clean backgrounds and text */
+            --light-bg: #f0f2f5; /* Very light grey for subtle background texture */
+            --light-surface: #ffffff; /* White for card backgrounds, slightly off-white for depth */
+            --text-dark: #1a1a1a; /* Darkest text for headings and primary content */
+            --text-light: #4a4a4a; /* Softer dark grey for body text */
+            --border-light: rgba(0, 0, 0, 0.08); /* Subtle border for clean lines */
+
+            /* Gradients - Enhanced for luxury feel */
+            --gradient-orange: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+            --gradient-purple: linear-gradient(135deg, #a259ff 0%, #b366ff 100%);
+            --gradient-mixed: linear-gradient(135deg, #ff6b00 0%, #a259ff 100%);
+            --gradient-hero: radial-gradient(circle at top left, rgba(255, 107, 0, 0.1) 0%, rgba(162, 89, 255, 0.1) 50%, transparent 100%);
+            --gradient-card-hover: linear-gradient(135deg, rgba(255, 107, 0, 0.05) 0%, rgba(162, 89, 255, 0.05) 100%);
+
+            /* Shadows and Glows - More pronounced and luxurious */
+            --shadow-orange: 0 25px 80px rgba(255, 107, 0, 0.35); /* Deeper orange shadow */
+            --shadow-purple: 0 25px 80px rgba(162, 89, 255, 0.35); /* Deeper purple shadow */
+            --glow-orange: 0 0 100px rgba(255, 107, 0, 0.5); /* Intense orange glow */
+            --glow-purple: 0 0 100px rgba(162, 89, 255, 0.5); /* Intense purple glow */
+
+            /* Glassmorphism - Refined for clarity and depth */
+            --glass-bg: rgba(255, 255, 255, 0.85); /* Slightly less opaque for more blur */
+            --glass-border: rgba(255, 107, 0, 0.3); /* Stronger orange border for glass elements */
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15); /* Distinct glass shadow */
+        }
+
+        /* Force Light Mode */
+        * {
+            color-scheme: light !important;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: var(--light-bg) !important;
+            color: var(--text-dark) !important;
+            overflow-x: hidden;
+            cursor: none; /* Hide default cursor */
+            opacity: 0; /* Changed from visibility: hidden */
+            line-height: 1.6;
+            font-size: 13px; /* Smaller base font size */
+            position: relative; /* For background patterns */
+            transition: opacity 0.8s ease-out; /* Fade in on load */
+        }
+
+        /* Subtle Background Pattern for Body */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 0v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm10 10v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 0v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM12 6v-4H10v4H6v2h4v4h2v-4h4v-2h-4zm0 0v-4H10v4H6v2h4v4h2v-4h4v-2h-4z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            background-repeat: repeat;
+            opacity: 0.1;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Custom Cursor - More refined and interactive */
+        .cursor {
+            position: fixed;
+            width: 7px; /* Smaller */
+            height: 7px; /* Smaller */
+            background: var(--primary-orange);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: normal;
+            transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 8px var(--primary-orange); /* Smaller shadow */
+        }
+
+        .cursor-follower {
+            position: fixed;
+            width: 28px; /* Smaller */
+            height: 28px; /* Smaller */
+            border: 2px solid var(--secondary-purple);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 0.8;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor-follower.hover {
+            transform: scale(1.6) translate(-50%, -50%); /* Smaller scale */
+            border-color: var(--primary-orange);
+            background: rgba(255, 107, 0, 0.15);
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.4); /* Smaller shadow */
+        }
+
+        /* Luxury Floating Glassmorphic Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 1.5rem; /* Adjusted bottom position */
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px); /* Reduced blur */
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            padding: 10px 20px; /* Adjusted padding */
+            display: flex;
+            align-items: center;
+            gap: 14px; /* Adjusted gap */
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+            width: 500px; /* Smaller width */
+            justify-content: center;
+            overflow: visible;
+        }
+
+        .nav-item {
+            position: relative; /* Crucial for absolute positioning of dropdown */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 11px; /* Set to 11px */
+            padding: 8px 14px; /* Adjusted padding */
+            border-radius: 100px;
+            transition: all 0.3s ease; /* Keep for individual link hover */
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Adjusted gap */
+            z-index: 2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-orange);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            border-radius: inherit;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-white);
+            transform: translateY(-1px); /* Adjusted lift */
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3); /* Adjusted shadow */
+        }
+
+        .nav-link:hover::before {
+            opacity: 1;
+        }
+
+        .nav-link svg {
+            width: 13px; /* Set to 13px */
+            height: 13px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+
+        .nav-link.active {
+            color: var(--accent-white);
+            background: var(--gradient-orange);
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+        }
+
+        /* Products Dropdown */
+        .products-dropdown {
+            position: absolute;
+            bottom: calc(100% + 10px); /* Position above the nav-item with 10px spacing */
+            left: 50%;
+            transform: translateX(-50%); /* Centered horizontally */
+            opacity: 0;
+            visibility: hidden;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px; /* Smaller radius */
+            padding: 20px; /* Smaller padding */
+            width: 700px; /* Smaller width */
+            box-shadow: var(--shadow-orange);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px; /* Smaller gap */
+            z-index: 999;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-item.products-item:hover .products-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-header {
+            grid-column: 1 / -1;
+            text-align: left;
+            font-weight: 700;
+            color: var(--primary-orange);
+            font-size: 0.8rem; /* Smaller font */
+            margin-bottom: 8px; /* Smaller margin */
+            padding-bottom: 4px; /* Smaller padding */
+            border-bottom: 1px solid var(--border-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .dropdown-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px; /* Smaller gap */
+        }
+
+        .dropdown-item {
+            display: flex;
+            flex-direction: column;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 12px; /* Smaller padding */
+            border-radius: 8px; /* Smaller radius */
+            transition: all 0.3s ease;
+            background: var(--light-surface);
+            border: 1px solid transparent;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Smaller shadow */
+        }
+
+        .dropdown-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-purple);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+            border-radius: inherit;
+        }
+
+        .dropdown-item:hover::before {
+            opacity: 0.1;
+        }
+
+        .dropdown-item:hover {
+            transform: translateY(-1px); /* Smaller lift */
+            box-shadow: 0 4px 12px rgba(162, 89, 255, 0.1); /* Smaller shadow */
+            color: var(--text-dark);
+            border-color: var(--secondary-purple);
+        }
+
+        .dropdown-item strong {
+            font-weight: 700;
+            font-size: 0.85rem; /* Smaller font */
+            margin-bottom: 4px; /* Smaller margin */
+            display: block;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+            z-index: 1;
+        }
+
+        .dropdown-item:hover strong {
+            color: var(--primary-orange);
+        }
+
+        .dropdown-item span {
+            font-size: 0.75rem; /* Smaller font */
+            line-height: 1.4;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+            z-index: 1;
+        }
+
+        .dropdown-item:hover span {
+            color: var(--text-dark);
+        }
+
+        /* Hero Section - Luxurious & Dynamic */
+        .hero {
+            height: 90vh; /* Slightly smaller height */
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--gradient-hero);
+            perspective: 1000px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.03"%3E%3Cpath d="M96 95h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zm-11 0h4v1h-4v4h-1v-4h-4v-1h4v-4h1zM0 0h1v1h-1V0zm0 0h1v1h-1V0z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            background-size: 60px 60px;
+            animation: background-pan 60s linear infinite;
+        }
+
+        @keyframes background-pan {
+            from { background-position: 0% 0%; }
+            to { background-position: 100% 100%; }
+        }
+
+        .floating-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px); /* Reduced blur */
+            animation: float 30s infinite ease-in-out;
+            opacity: 0.7; /* Slightly less opaque */
+            will-change: transform, opacity;
+        }
+
+        .blob-1 {
+            width: 400px; /* Smaller */
+            height: 400px; /* Smaller */
+            background: var(--gradient-orange);
+            top: 10%;
+            left: 8%;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 300px; /* Smaller */
+            height: 300px; /* Smaller */
+            background: var(--gradient-purple);
+            top: 55%;
+            right: 12%;
+            animation-delay: -10s;
+        }
+
+        .blob-3 {
+            width: 250px; /* Smaller */
+            height: 250px; /* Smaller */
+            background: var(--gradient-mixed);
+            bottom: 10%;
+            left: 45%;
+            animation-delay: -20s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translate(50px, -40px) rotate(90deg) scale(1.1); /* Smaller translation */
+            }
+            50% {
+                transform: translate(-30px, 30px) rotate(180deg) scale(0.9); /* Smaller translation */
+            }
+            75% {
+                transform: translate(40px, -20px) rotate(270deg) scale(1.05); /* Smaller translation */
+            }
+        }
+
+        .particle-system {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px; /* Smaller */
+            height: 3px; /* Smaller */
+            background: var(--primary-orange);
+            border-radius: 50%;
+            animation: particle-float 25s infinite linear;
+            box-shadow: 0 0 4px var(--primary-orange); /* Smaller shadow */
+            will-change: transform, opacity;
+        }
+
+        .particle:nth-child(odd) {
+            background: var(--secondary-purple);
+            box-shadow: 0 0 4px var(--secondary-purple);
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 25%; animation-delay: -5s; }
+        .particle:nth-child(3) { left: 40%; animation-delay: -10s; }
+        .particle:nth-child(4) { left: 55%; animation-delay: -15s; }
+        .particle:nth-child(5) { left: 70%; animation-delay: -20s; }
+        .particle:nth-child(6) { left: 85%; animation-delay: -25s; }
+
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7; /* Slightly less opaque */
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) scale(1) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 1100px; /* Slightly smaller max-width */
+            padding: 0 30px; /* Smaller padding */
+            position: relative;
+            transform-style: preserve-3d;
+            animation: content-fade-in 1.5s ease forwards; /* Faster animation */
+        }
+
+        @keyframes content-fade-in {
+            0% { opacity: 0; transform: translateY(40px) rotateX(-5deg); } /* Smaller transform */
+            100% { opacity: 1; transform: translateY(0) rotateX(0deg); }
+        }
+
+        .hero-logo {
+            font-family: "Outfit", sans-serif;
+            font-size: 1.6rem; /* Smaller font */
+            font-weight: 800;
+            margin-bottom: 20px; /* Smaller margin */
+            opacity: 0;
+            animation: logoReveal 1.2s ease 0.3s forwards; /* Faster animation */
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+        }
+
+        .logo-red {
+            color: var(--primary-orange);
+        }
+
+        .logo-square {
+            color: var(--text-white);
+        }
+
+        .logo-infosys {
+            color: var(--secondary-purple);
+        }
+
+        @keyframes logoReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px); /* Smaller transform */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-family: "Outfit", sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.2rem); /* Adjusted clamp values */
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px; /* Smaller margin */
+            opacity: 0;
+            animation: titleReveal 1.8s ease 0.6s forwards; /* Faster animation */
+            text-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Smaller shadow */
+        }
+
+        .title-line {
+            display: block;
+            color: var(--text-dark);
+            font-size: inherit;
+        }
+
+        .title-accent {
+            background: var(--gradient-orange);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 30px rgba(255, 107, 0, 0.5)); /* Smaller filter */
+        }
+
+        @keyframes titleReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(80px); /* Smaller transform */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 15px; /* Smaller font */
+            font-weight: 400;
+            color: var(--text-light);
+            margin-bottom: 40px; /* Smaller margin */
+            opacity: 0;
+            animation: subtitleReveal 1.5s ease 1s forwards; /* Faster animation */
+            max-width: 700px; /* Smaller max-width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @keyframes subtitleReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(50px); /* Smaller transform */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-us{
+            text-decoration: none;
+            position: static;
+            margin: 30px auto 0; /* Smaller margin */
+            display: block;
+            width: fit-content;
+            background: var(--gradient-purple);
+            padding: 18px 35px; /* Smaller padding */
+            border-radius: 40px; /* Smaller radius */
+            color: white;
+            font-size: 15px; /* Smaller font */
+            border: 2px solid var(--primary-orange); /* Smaller border */
+            cursor: pointer;
+            font-weight: 700;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-transform: uppercase;
+            box-shadow: var(--shadow-purple);
+        }
+
+        .about-us:hover {
+             transform: translateY(-6px) scale(1.03); /* Smaller transform */
+            box-shadow: var(--glow-purple);
+            border-color: var(--secondary-purple);
+        }
+        .cta-button {
+            position: relative;
+            padding: 20px 40px; /* Smaller padding */
+            font-size: 1.1rem; /* Smaller font */
+            font-weight: 700;
+            color: var(--accent-white);
+            background: var(--gradient-orange);
+            border: 2px solid var(--secondary-purple); /* Smaller border */
+            border-radius: 50px; /* Smaller radius */
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: var(--shadow-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px; /* Smaller letter spacing */
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-6px) scale(1.03); /* Smaller transform */
+            box-shadow: var(--glow-orange);
+            border-color: var(--primary-orange);
+        }
+
+        .button-glow {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .cta-button:hover .button-glow {
+            left: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px; /* Smaller max-width */
+            margin: 0 auto;
+            padding: 0 30px; /* Smaller padding */
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0; /* Smaller padding */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-family: "Outfit", sans-serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem); /* Adjusted clamp values */
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 60px; /* Smaller margin */
+            background: var(--gradient-orange);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px; /* Smaller bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px; /* Smaller width */
+            height: 2px; /* Smaller height */
+            background: var(--gradient-purple);
+            border-radius: 1px; /* Smaller radius */
+            box-shadow: 0 2px 8px rgba(162, 89, 255, 0.3); /* Smaller shadow */
+        }
+
+        /* Services Section - Luxury */
+        .services {
+            background: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Smaller minmax */
+            gap: 30px; /* Smaller gap */
+            margin-top: 60px; /* Smaller margin */
+        }
+
+        .service-card {
+            position: relative;
+            padding: 40px 30px; /* Smaller padding */
+            background: var(--light-surface);
+            border: 1px solid var(--border-light);
+            border-radius: 20px; /* Smaller radius */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card-hover);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+            border-radius: inherit;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.01) rotateX(1deg); /* Smaller transform */
+            border-color: var(--primary-orange);
+            box-shadow: var(--shadow-orange), 0 30px 60px rgba(0, 0, 0, 0.2); /* Smaller shadow */
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-orange);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: inherit;
+            z-index: 0;
+        }
+
+        .service-card:hover .card-glow {
+            opacity: 0.1;
+        }
+
+        .service-icon {
+            width: 60px; /* Smaller */
+            height: 60px; /* Smaller */
+            margin-bottom: 25px; /* Smaller margin */
+            color: var(--secondary-purple);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: drop-shadow(0 4px 12px rgba(162, 89, 255, 0.2)); /* Smaller filter */
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.08) rotate(3deg); /* Smaller transform */
+            color: var(--primary-orange);
+        }
+
+        .service-card h3 {
+            font-family: "Outfit", sans-serif;
+            font-size: 1.4rem; /* Smaller font */
+            font-weight: 700;
+            margin-bottom: 15px; /* Smaller margin */
+            color: var(--text-dark);
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem; /* Smaller font */
+            position: relative;
+            z-index: 2;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light-surface);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px; /* Smaller gap */
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.05rem; /* Smaller font */
+            line-height: 1.8;
+            color: var(--text-light);
+            max-width: 550px; /* Smaller max-width */
+        }
+
+        .about-highlight {
+            color: var(--primary-orange);
+            font-weight: 700;
+            text-shadow: 0 1px 4px rgba(255, 107, 0, 0.1); /* Smaller shadow */
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px; /* Smaller radius */
+            overflow: hidden;
+            box-shadow: var(--shadow-purple);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid var(--secondary-purple); /* Smaller border */
+        }
+
+        .about-image:hover {
+            transform: scale(1.01) rotate(0.5deg); /* Smaller transform */
+            box-shadow: var(--glow-purple);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 350px; /* Smaller height */
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03); /* Smaller scale */
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Smaller minmax */
+            gap: 30px; /* Smaller gap */
+            margin-top: 60px; /* Smaller margin */
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px 18px; /* Smaller padding */
+            background: var(--accent-white);
+            border-radius: 18px; /* Smaller radius */
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-orange);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+            border-radius: inherit;
+        }
+
+        .stat-item:hover::before {
+            opacity: 0.05;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-8px); /* Smaller transform */
+            box-shadow: var(--shadow-orange);
+            border-color: var(--primary-orange);
+        }
+
+        .stat-number {
+            display: block;
+            font-family: "Outfit", sans-serif;
+            font-size: 3.2rem; /* Smaller font */
+            font-weight: 900;
+            background: var(--gradient-purple);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px; /* Smaller margin */
+            filter: drop-shadow(0 4px 12px rgba(162, 89, 255, 0.3)); /* Smaller filter */
+        }
+
+        .stat-label {
+            font-size: 0.95rem; /* Smaller font */
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* Products Section - Luxury */
+        .products {
+            background: linear-gradient(135deg, rgba(162, 89, 255, 0.08) 0%, rgba(255, 107, 0, 0.08) 100%);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Smaller minmax */
+            gap: 25px; /* Smaller gap */
+            align-items: stretch; /* Added to ensure even height alignment */
+        }
+
+        .product-card {
+            background: var(--light-surface);
+            border-radius: 18px; /* Smaller radius */
+            padding: 30px 20px; /* Smaller padding */
+            text-align: center;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+            display: flex; /* Added for internal content alignment */
+            flex-direction: column; /* Added for internal content alignment */
+            justify-content: flex-start; /* Align content to top within card */
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-purple);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+            border-radius: inherit;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.01); /* Smaller transform */
+            border-color: var(--secondary-purple);
+            box-shadow: var(--shadow-purple);
+        }
+
+        .product-card:hover::before {
+            opacity: 0.08;
+        }
+
+        .product-icon {
+            width: 50px; /* Smaller */
+            height: 50px; /* Smaller */
+            margin: 0 auto 18px; /* Smaller margin */
+            color: var(--primary-orange);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 2px 8px rgba(255, 107, 0, 0.2)); /* Smaller filter */
+        }
+
+        .product-card:hover .product-icon {
+            transform: scale(1.08); /* Smaller scale */
+            color: var(--secondary-purple);
+        }
+
+        .product-card h4 {
+            font-size: 1.2rem; /* Smaller font */
+            font-weight: 700;
+            margin-bottom: 10px; /* Smaller margin */
+            color: var(--text-dark);
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.9rem; /* Smaller font */
+            position: relative;
+            z-index: 2;
+            flex-grow: 1; /* Allow paragraph to take up remaining space */
+        }
+
+        /* Differentiators Section */
+        .differentiators {
+            background: var(--accent-white);
+        }
+
+        .diff-grid {
+            display: grid;
+            gap: 30px; /* Smaller gap */
+            max-width: 900px; /* Smaller max-width */
+            margin: 0 auto;
+        }
+
+        .diff-item {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Smaller gap */
+            padding: 35px; /* Smaller padding */
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.05) 0%, rgba(162, 89, 255, 0.05) 100%);
+            border-radius: 20px; /* Smaller radius */
+            border: 1px solid rgba(162, 89, 255, 0.2);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Smaller shadow */
+        }
+
+        .diff-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-purple);
+            opacity: 0;
+            transition: left 0.5s ease, opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .diff-item:hover::before {
+            left: 0;
+            opacity: 0.1;
+        }
+
+        .diff-item:hover {
+            border-color: var(--secondary-purple);
+            box-shadow: var(--shadow-purple);
+            transform: translateX(10px); /* Smaller transform */
+        }
+
+        .diff-icon {
+            width: 50px; /* Smaller */
+            height: 50px; /* Smaller */
+            color: var(--secondary-purple);
+            flex-shrink: 0;
+            transition: transform 0.4s ease;
+            filter: drop-shadow(0 4px 12px rgba(162, 89, 255, 0.2)); /* Smaller filter */
+            z-index: 1;
+        }
+
+        .diff-item:hover .diff-icon {
+            transform: scale(1.1) rotate(-3deg); /* Smaller transform */
+            color: var(--primary-orange);
+        }
+
+        .diff-content h3 {
+            font-family: "Outfit", sans-serif;
+            font-size: 1.3rem; /* Smaller font */
+            font-weight: 700;
+            margin-bottom: 10px; /* Smaller margin */
+            color: var(--text-dark);
+            z-index: 1;
+        }
+
+        .diff-content p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem; /* Smaller font */
+            z-index: 1;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gradient-hero);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 700px; /* Smaller max-width */
+            margin: 0 auto;
+        }
+
+        .contact-subtitle {
+            font-size: 1.15rem; /* Smaller font */
+            color: var(--text-light);
+            margin-bottom: 50px; /* Smaller margin */
+            line-height: 1.7;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller minmax */
+            gap: 25px; /* Smaller gap */
+            margin-top: 60px; /* Smaller margin */
+        }
+
+        .contact-item {
+            background: var(--light-surface);
+            padding: 30px 20px; /* Smaller padding */
+            border-radius: 18px; /* Smaller radius */
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-orange);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+            border-radius: inherit;
+        }
+
+        .contact-item:hover::before {
+            opacity: 0.05;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-8px); /* Smaller transform */
+            box-shadow: var(--shadow-orange);
+            border-color: var(--primary-orange);
+        }
+
+        .contact-item strong {
+            display: block;
+            font-size: 1rem; /* Smaller font */
+            color: var(--primary-orange);
+            margin-bottom: 10px; /* Smaller margin */
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .contact-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.9rem; /* Smaller font */
+            z-index: 1;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 70px 0 30px; /* Smaller padding */
+            background: var(--text-dark);
+            color: var(--accent-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23FFFFFF" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 0v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm10 10v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 0v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM12 6v-4H10v4H6v2h4v4h2v-4h4v-2h-4zm0 0v-4H10v4H6v2h4v4h2v-4h4v-2h-4z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            background-size: 60px 60px;
+            animation: background-pan-reverse 60s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes background-pan-reverse {
+            from { background-position: 100% 100%; }
+            to { background-position: 0% 0%; }
+        }
+
+        .footer-blob {
+            position: absolute;
+            width: 450px; /* Smaller */
+            height: 450px; /* Smaller */
+            background: var(--gradient-mixed);
+            border-radius: 50%;
+            filter: blur(100px); /* Smaller blur */
+            opacity: 0.12; /* Slightly less opaque */
+            top: -200px; /* Adjusted position */
+            right: -200px; /* Adjusted position */
+            animation: float 40s infinite ease-in-out reverse;
+        }
+
+        .footer-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo {
+            font-family: "Outfit", sans-serif;
+            font-size: 2rem; /* Smaller font */
+            font-weight: 900;
+            margin-bottom: 20px; /* Smaller margin */
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Smaller shadow */
+        }
+
+        .footer-text {
+            font-size: 0.95rem; /* Smaller font */
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px; /* Smaller margin */
+            max-width: 550px; /* Smaller max-width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Smaller gap */
+            margin-bottom: 30px; /* Smaller margin */
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem; /* Smaller font */
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; /* Smaller bottom */
+            left: 0;
+            width: 0;
+            height: 1px; /* Smaller height */
+            background: var(--primary-orange);
+            transition: width 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px; /* Smaller padding */
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem; /* Smaller font */
+        }
+
+        /* Pure CSS Animations for elements that had GSAP */
+
+        /* Fade In */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Slide In Left */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .slide-in-left.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Slide In Right */
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .slide-in-right.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Scale In */
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scale-in.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Counter Animation (CSS only - will just show final value) */
+
+        /* Responsive Design (Adjusted for new sizes and elements) */
+        @media (max-width: 1200px) {
+            .bottom-nav {
+                width: 90%;
+                max-width: 450px; /* Adjusted max-width */
+                padding: 8px 15px;
+                gap: 10px;
+            }
+            .products-dropdown {
+                width: 85%;
+                grid-template-columns: repeat(3, 1fr);
+                padding: 20px;
+                gap: 15px;
+            }
+            .hero-title {
+                font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            }
+            .section-title {
+                font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+            }
+            .about-content {
+                gap: 40px;
+            }
+            .services-grid, .products-grid, .stats-container, .contact-info {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-image {
+                margin: 0 auto;
+            }
+            .diff-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .products-dropdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-us {
+                position: static;
+                margin: 25px auto 0;
+                display: block;
+                width: fit-content;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px; /* Smaller padding */
+            }
+            .bottom-nav {
+                bottom: 0.8rem;
+                padding: 6px 10px;
+                gap: 8px;
+                width: 95%;
+            }
+            .products-dropdown {
+                bottom: 60px; /* Adjusted position */
+                width: 95%;
+                padding: 15px;
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .nav-link {
+                font-size: 9px;
+                padding: 5px 8px;
+                gap: 4px;
+            }
+            .dropdown-item {
+                font-size: 9px;
+                padding: 10px;
+            }
+            .hero-content {
+                padding: 0 10px;
+            }
+            .hero-title {
+                font-size: clamp(1.6rem, 6vw, 2.5rem);
+            }
+            .hero-subtitle {
+                font-size: 14px;
+            }
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 0.9rem;
+            }
+            .section {
+                padding: 70px 0; /* Smaller padding */
+            }
+            .section-title {
+                font-size: clamp(1.6rem, 4vw, 2.2rem);
+                margin-bottom: 40px;
+            }
+            .services-grid, .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .about-image img {
+                height: 250px; /* Smaller height */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bottom-nav {
+                bottom: 0.6rem;
+                padding: 4px 6px;
+                gap: 4px;
+                width: 98%;
+            }
+            .products-dropdown {
+                bottom: 50px;
+                width: 98%;
+                padding: 10px;
+                gap: 6px;
+            }
+            .nav-link {
+                font-size: 8px;
+                padding: 4px 5px;
+            }
+            .dropdown-item {
+                font-size: 8px;
+                padding: 8px;
+            }
+            .hero-title {
+                font-size: 1.4rem;
+            }
+            .hero-subtitle {
+                font-size: 0.85rem;
+            }
+            .cta-button {
+                padding: 12px 20px;
+                font-size: 0.8rem;
+            }
+            .service-card, .product-card, .diff-item, .contact-item, .stat-item {
+                padding: 20px 15px;
+                border-radius: 15px;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            .footer-logo {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Luxury Floating Glassmorphic Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item">
+            <a href="#home" class="nav-link active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Home
+            </a>
+        </div>
+        <div class="nav-item products-item">
+            <a href="#products" class="nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                Products
+            </a>
+            <div class="products-dropdown">
+                <div class="dropdown-header">Our Solutions</div>
+                <div class="dropdown-column">
+                    <a href="SAP/sap.html" class="dropdown-item" target="_blank">
+                        <strong>SAP</strong>
+                        <span>ERP for finance, supply chain, HR — real-time insights & efficiency.</span>
+                    </a>
+                    <a href="#" class="dropdown-item" target="_blank">
+                        <strong>Tally</strong>
+                        <span>Accounting software for bookkeeping, invoicing, payroll & compliance.</span>
+                    </a>
+                    <a href="#" class="dropdown-item" target="_blank">
+                        <strong>GreytHR</strong>
+                        <span>Cloud HR platform for payroll, attendance, and employee management.</span>
+                    </a>
+                    <a href="#" class="dropdown-item" target="_blank">
+                        <strong>Logic ERP</strong>
+                        <span>Integrated finance, inventory, sales & HR with real-time analytics.</span>
+                    </a>
+                </div>
+                <div class="dropdown-column">
+                    <a href="web.html" class="dropdown-item" target="_blank">
+                        <strong>Mobile/Web App</strong>
+                        <span>Custom apps for iOS & Android with secure backend integration.</span>
+                    </a>
+                    <a href="IT.html" class="dropdown-item" target="_blank">
+                        <strong>IT Infra</strong>
+                        <span>Powering businesses with secure, scalable, and future-ready IT infrastructure.</span>
+                    </a>
+                    <a href="cyber.html" class="dropdown-item active" target="_blank">
+                        <strong>Cybersecurity</strong>
+                        <span>Advanced threat protection and data security solutions.</span>
+                    </a>
+                    <a href="cloud-solutions.html" class="dropdown-item" target="_blank">
+                        <strong>Cloud Solutions</strong>
+                        <span>Scalable cloud infrastructure and management services.</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="#about" class="nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M12.89 1.17l8.22 4.75a1 1 0 0 1 .59.9V19a1 1 0 0 1-.59.9L12.89 23.83a1 1 0 0 1-1.78 0L2.11 19.9a1 1 0 0 1-.59-.9V6.82a1 1 0 0 1 .59-.9L11.11 1.17a1 1 0 0 1 1.78 0z"/><polyline points="2.32 6.82 12 12.5 21.68 6.82"/><polyline points="12 2.17 12 12.5 12 22.83"/></svg>
+                About Us
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="#contact" class="nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></polyline></svg>
+                Contact Us
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="floating-blob blob-1"></div>
+            <div class="floating-blob blob-2"></div>
+            <div class="floating-blob blob-3"></div>
+            <div class="particle-system">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <span class="logo-red">Red</span><span class="logo-square">Square</span><span class="logo-infosys">Infosys</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Empowering Enterprises</span>
+                <span class="title-line">with Bespoke</span>
+                <span class="title-line title-accent">SaaS & IT Excellence</span>
+            </h1>
+            <p class="hero-subtitle">
+                Customized Software, SaaS Solutions, ERP Systems, Mobile Apps, Virtual Office Services, Cloud Infrastructure & Strategic HR Tools
+            </p>
+            <a href="#services" class="cta-button">
+                Discover Our Solutions
+                <div class="button-glow"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">Premium IT Solutions</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="card-glow"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>Bespoke Software Development</h3>
+                    <p>Custom-built software solutions tailored to your unique business requirements. From enterprise applications to specialized tools, we create scalable, secure, and innovative software that drives your business forward with cutting-edge technology and best practices.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="card-glow"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                            <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p>Native iOS and Android applications, cross-platform solutions using React Native and Flutter. We create intuitive, high-performance mobile experiences that engage users and drive business growth with modern UI/UX design and robust backend integration.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="card-glow"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>ERP & Tally Solutions</h3>
+                    <p>Comprehensive ERP implementations, Tally ERP-9 customization, and accounting software solutions. We streamline your business operations with integrated systems that manage inventory, finance, HR, and customer relationships efficiently.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="card-glow"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9,22 9,12 15,12 15,22"/>
+                        </svg>
+                    </div>
+                    <h3>Virtual Office & Cloud Services</h3>
+                    <p>Complete virtual office solutions with cloud infrastructure, remote collaboration tools, and digital workspace management. Enable your team to work efficiently from anywhere with secure, scalable cloud-based systems and virtual office services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section products">
+        <div class="container">
+            <h2 class="section-title">Our Product Portfolio</h2>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h4>SAP</h4>
+                    <p>SAP is an enterprise resource planning (ERP) software that integrates core business functions like finance, supply chain, and HR, streamlining processes, improving efficiency, and providing real-time insights for decision-making.</p>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                    </div>
+                    <h4>Tally</h4>
+                    <p>Tally is an accounting software used for financial management, including bookkeeping, invoicing, taxation, and payroll. It helps businesses manage finances, track transactions, and generate reports with ease and accuracy.</p>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h4>GreytHR</h4>
+                    <p>GreytHR is a cloud-based HR software that simplifies payroll, attendance, employee management, performance tracking. It automates HR processes, ensuring compliance, improving productivity, enhancing employee experience.</p>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9,22 9,12 15,12 15,22"/>
+                        </svg>
+                    </div>
+                    <h4>Logic ERP</h4>
+                    <p>Logic ERP is a comprehensive software solution that integrates business processes like finance, inventory, sales, and HR. It streamlines operations, enhances efficiency, provides real-time data, and supports decision-making for businesses.</p>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                            <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <h4>Mobile Application</h4>
+                    <p>A mobile application is software designed to run on smartphones and tablets. It enables users to perform tasks, access services, and interact with various features like communication, entertainment, and productivity tools.</p>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h4>IT Infra</h4>
+                    <p>Powering businesses with secure, scalable, and future-ready IT infrastructure.</p>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h4>Cybersecurity</h4>
+                    <p>Comprehensive security solutions including threat detection, data protection, network security, and compliance management to safeguard your business against evolving cyber threats.</p>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h4>Cloud Solutions</h4>
+                    <p>End-to-end cloud services including migration, infrastructure management, SaaS deployment, and hybrid cloud solutions to enable digital transformation and scalability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">Our Legacy of Excellence</h2>
+            <div class="about-content">
+                <div class="about-text slide-in-left">
+                    <p>Since <span class="about-highlight">2004</span>, under the visionary leadership of <span class="about-highlight">Mr. Jeevan Pandey</span>, Red Square Infosys has been at the forefront of delivering world-class IT and SaaS solutions from our strategic Delhi/Noida headquarters.</p>
+                    <p>We specialize in transforming businesses through innovative technology, empowering organizations across India to achieve unprecedented efficiency and productivity in today's rapidly evolving digital landscape.</p>
+                    <p>Our expertise spans across <span class="about-highlight">Tally ERP-9 accounting solutions</span>, bespoke software development, mobile applications, cloud services, virtual office solutions, comprehensive ERP systems, HR management tools, and strategic IT consulting.</p>
+                    <p>With two decades of proven excellence, we've established ourselves as a trusted technology partner for businesses ranging from startups to large enterprises, consistently delivering solutions that drive measurable growth and operational excellence.</p>
+                </div>
+                <div class="about-image slide-in-right">
+                    <img src="https://placehold.co/600x450/A259FF/FFFFFF?text=Red+Square+Infosys+Office" alt="Red Square Infosys Office">
+                </div>
+                <a href="about.html" class="about-us"target="_blank">More About Us</a>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item scale-in">
+                    <span class="stat-number" data-count="20">20</span>
+                    <span class="stat-label">Years of Excellence</span>
+                </div>
+                <div class="stat-item scale-in">
+                    <span class="stat-number" data-count="500">500</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-item scale-in">
+                    <span class="stat-number" data-count="200">200</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item scale-in">
+                    <span class="stat-number" data-count="50">50</span>
+                    <span class="stat-label">Expert Team Members</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentiators Section -->
+    <section class="section differentiators">
+        <div class="container">
+            <h2 class="section-title">Why Choose Red Square Infosys</h2>
+            <div class="diff-grid">
+                <div class="diff-item fade-in">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20,6 9,17 4,12"/>
+                        </svg>
+                    </div>
+                    <div class="diff-content">
+                        <h3>Proven Reliability & Trust</h3>
+                        <p>Two decades of consistent delivery and client satisfaction with industry-leading expertise. Our track record speaks for itself with 99.9% project success rate and long-term client relationships built on trust and excellence.</p>
+                    </div>
+                </div>
+                <div class="diff-item fade-in">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="diff-content">
+                        <h3>Complete Customization</h3>
+                        <p>Tailored solutions that perfectly align with your unique business goals and operational requirements. We don't believe in one-size-fits-all; every solution is crafted specifically for your business needs.</p>
+                    </div>
+                </div>
+                <div class="diff-item fade-in">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polygon points="10,8 16,12 10,16 10,8"/>
+                        </svg>
+                    </div>
+                    <div class="diff-content">
+                        <h3>Strategic Delhi/Noida Presence</h3>
+                        <p>Prime location in India's technology hub ensuring proximity, accessibility, and seamless communication. Our strategic presence allows us to serve clients across NCR and beyond with dedicated on-site support.</p>
+                    </div>
+                </div>
+                <div class="diff-item fade-in">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11H1l6-6 6 6"/>
+                            <path d="M9 17l3 3 3-3"/>
+                            <path d="M22 18.5c0 .3-.2.5-.5.5h-1c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h1c.3 0 .5.2.5.5z"/>
+                        </svg>
+                    </div>
+                    <div class="diff-content">
+                        <h3>Business Empowerment Focus</h3>
+                        <p>Our primary focus is transforming operations and driving measurable growth through innovative technology solutions. We measure our success by your business growth and operational efficiency improvements.</p>
+                    </div>
+                </div>
+                <div class="diff-item fade-in">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <div class="diff-content">
+                        <h3>Cutting-Edge Technology</h3>
+                        <p>We stay ahead of technology trends, implementing the latest tools and frameworks to ensure your solutions are future-ready. Our team continuously updates their skills to deliver state-of-art solutions.</p>
+                    </div>
+                </div>
+                <div class="diff-item fade-in">
+                    <div class="diff-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="diff-content">
+                        <h3>Dedicated Support Team</h3>
+                        <p>24/7 technical support and maintenance services ensure your systems run smoothly. Our dedicated support team provides immediate assistance and proactive monitoring to prevent issues before they occur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Ready to Transform Your Business?</h2>
+                <p class="contact-subtitle">
+                    Let's discuss how we can elevate your enterprise with our premium IT solutions and drive your business forward into the digital future. Our expert team is ready to understand your unique challenges and craft the perfect technology solution.
+                </p>
+                <a href="contact.html" class="cta-button" target="_blank">
+                   Inquire Today
+                    <div class="button-glow"></div>
+                </a>
+                <div class="contact-info">
+                    <div class="contact-item fade-in">
+                        <strong>Delhi/Noida Headquarters</strong>
+                        <p>Premium IT Solutions Hub<br>Serving NCR & Pan-India<br>Strategic Technology Center</p>
+                    </div>
+                    <div class="contact-item fade-in">
+                        <strong>Established Excellence</strong>
+                        <p>Since 2004 - Two Decades<br>of IT Innovation & Excellence<br>Trusted by 200+ Enterprises</p>
+                    </div>
+                    <div class="contact-item fade-in">
+                        <strong>Visionary Leadership</strong>
+                        <p>Mr. Jeevan Pandey, Proprietor<br>Technology Visionary & Expert<br>20+ Years Industry Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bg">
+            <div class="footer-blob"></div>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-red">Red</span><span class="logo-square">Square</span><span class="logo-infosys">Infosys</span>
+                </div>
+                <p class="footer-text">
+                    Empowering enterprises since 2004 with world-class SaaS and IT solutions.
+                    Your trusted technology partner for digital transformation and business growth.
+                </p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Products</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Red Square Infosys. All rights reserved. | redsquareinfo.in | Designed for Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Custom Cursor Implementation
+        const cursor = document.querySelector(".cursor");
+        const cursorFollower = document.querySelector(".cursor-follower");
+        let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
+
+        document.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.left = mouseX + "px";
+            cursor.style.top = mouseY + "px";
+        });
+
+        function animateFollower() {
+            followerX += (mouseX - followerX) * 0.15; // Slightly slower follow
+            followerY += (mouseY - followerY) * 0.15;
+            cursorFollower.style.left = (followerX - (cursorFollower.offsetWidth / 2)) + "px";
+            cursorFollower.style.top = (followerY - (cursorFollower.offsetHeight / 2)) + "px";
+            requestAnimationFrame(animateFollower);
+        }
+        animateFollower();
+
+        // Hover Effects for custom cursor
+        document.querySelectorAll("a, button, .service-card, .diff-item, .product-card, .stat-item, .contact-item, .nav-link, .dropdown-item").forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                cursorFollower.classList.add("hover");
+                cursor.style.transform = "scale(1.8)"; // Adjusted scale
+            });
+            el.addEventListener("mouseleave", () => {
+                cursorFollower.classList.remove("hover");
+                cursor.style.transform = "scale(1)";
+            });
+        });
+
+        // Smooth Scrolling for fixed bottom nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", e => {
+                e.preventDefault();
+                const targetId = anchor.getAttribute("href");
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const navHeight = document.querySelector('.bottom-nav').offsetHeight;
+                    const offset = 80; // Adjusted offset
+                    window.scrollTo({
+                        top: target.offsetTop - navHeight - offset,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        // Active Link Tracking for Bottom Nav (pure JS)
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        const updateActiveLink = () => {
+            let currentActive = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const navHeight = document.querySelector('.bottom-nav').offsetHeight;
+                // Adjust for fixed nav and some scroll buffer
+                if (pageYOffset >= sectionTop - navHeight - 100 && pageYOffset < sectionTop + sectionHeight - navHeight - 100) {
+                    currentActive = section.id;
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(currentActive)) {
+                    link.classList.add("active");
+                }
+            });
+        };
+
+        window.addEventListener("scroll", updateActiveLink);
+        window.addEventListener("load", updateActiveLink); // Set active on load
+
+        // Products Dropdown (pure JS)
+        const productsItem = document.querySelector(".products-item");
+        const productsDropdown = document.querySelector(".products-dropdown");
+
+        productsItem.addEventListener("mouseenter", () => {
+            productsDropdown.style.opacity = "1";
+            productsDropdown.style.visibility = "visible";
+            productsDropdown.style.transform = "translateX(-50%) translateY(0)";
+        });
+
+        productsItem.addEventListener("mouseleave", () => {
+            productsDropdown.style.opacity = "0";
+            productsDropdown.style.visibility = "hidden";
+            productsDropdown.style.transform = "translateX(-50%) translateY(20px)"; // Reset for next hover
+        });
+
+        // General Scroll Animations (pure JS with Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.15 // Adjust as needed
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    // observer.unobserve(entry.target); // Uncomment if you want animation to play only once
+                } else {
+                    // entry.target.classList.remove("show"); // Uncomment if you want animation to replay on scroll out
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        document.querySelectorAll(".fade-in, .slide-in-left, .slide-in-right, .scale-in").forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter Animation (pure JS)
+        const statNumbers = document.querySelectorAll(".stat-number");
+
+        const counterObserverCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute("data-count"));
+                    let current = 0;
+                    const increment = target / 150; // Adjust for speed
+
+                    const updateCounter = () => {
+                        if (current < target) {
+                            current += increment;
+                            entry.target.innerText = Math.ceil(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            entry.target.innerText = target;
+                        }
+                    };
+                    updateCounter();
+                    observer.unobserve(entry.target); // Stop observing once counted
+                }
+            });
+        };
+
+        const counterObserver = new IntersectionObserver(counterObserverCallback, {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.5 // Trigger when 50% of element is visible
+        });
+
+        statNumbers.forEach(el => {
+            counterObserver.observe(el);
+        });
+
+        // Show content after load (pure JS)
+        window.addEventListener("load", () => {
+            document.body.style.opacity = "1";
+        });
+    </script>
+
+</body>
+</html>
